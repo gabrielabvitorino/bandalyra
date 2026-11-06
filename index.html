@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banda Lyra | Lyra em Movimento, Paracatu/MG</title>
+<meta name="description" content="Banda Lyra, de Paracatu/MG. Conheça o Projeto Lyra em Movimento: Oficinas de Formação Musical gratuitas para 30 bolsistas de 9 a 16 anos.">
+<meta name="theme-color" content="#17305a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Banda Lyra | Lyra em Movimento, Paracatu/MG">
+<meta property="og:description" content="Banda Lyra, de Paracatu/MG. Conheça o Projeto Lyra em Movimento: Oficinas de Formação Musical gratuitas para 30 bolsistas de 9 a 16 anos.">
+<!-- Quando o site tiver endereço definitivo, acrescente og:url e og:image (foto 1200x630 do Integrar na Praça). -->
+<link rel="icon" type="image/svg+xml" href="assets/img/crest-navy.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Banda Lyra",
+  "alternateName": "Sociedade Corporação Musical Lyra Paracatuense",
+  "description": "Banda de Paracatu/MG. Realiza o Projeto Lyra em Movimento: Música, Educação e Cidadania.",
+  "telephone": "+5538999003676",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rafael Antão de Melo, 211, Centro",
+    "addressLocality": "Paracatu",
+    "addressRegion": "MG",
+    "postalCode": "38600-230",
+    "addressCountry": "BR"
+  }
+}
+</script>
+
+<style>
+/* =========================================================
+   Design system: Banda Lyra Paracatuense
+   Tokens copiados de tokens/*.css do design system.
+   Marca: navy + dourado + creme, tudo em serifa, cantos retos.
+   ========================================================= */
+:root{
+  /* navy */
+  --lyra-navy-900:#0c2050;--lyra-navy-800:#0c2454;--lyra-navy-700:#17305a;--lyra-navy-600:#1f3a68;
+  --lyra-navy-500:#2a4478;--lyra-navy-300:#6c80a6;--lyra-navy-200:#aab6cc;--lyra-navy-100:#dbe1ec;
+  /* ouro */
+  --lyra-gold-800:#6d5028;--lyra-gold-700:#8f6b3a;--lyra-gold-600:#a88054;--lyra-gold-500:#b89060;
+  --lyra-gold-400:#c9a878;--lyra-gold-300:#d9be8e;--lyra-gold-200:#e8d6b6;--lyra-gold-100:#f4ebdb;
+  /* papel */
+  --lyra-cream-50:#faf5ee;--lyra-cream-100:#f4f0e7;--lyra-cream-200:#ebe5d8;--lyra-cream-300:#ded6c4;
+  --lyra-frame-900:#2a1808;
+  --lyra-ink-700:#3c4048;
+  --lyra-white:#fff;
+
+  --text-heading:var(--lyra-navy-700);--text-body:var(--lyra-navy-800);
+  /* texto dourado pequeno sobre creme usa gold-800 (6,5:1); gold-700 fica em 4,3:1 */
+  --text-accent:var(--lyra-gold-800);
+  --text-on-navy:var(--lyra-cream-50);--text-on-gold:var(--lyra-navy-900);
+  --surface-page:var(--lyra-cream-100);--surface-card:var(--lyra-cream-50);
+  --surface-inverse:var(--lyra-navy-700);--surface-inverse-deep:var(--lyra-navy-900);
+  --line-hairline:var(--lyra-navy-200);--line-rule:var(--lyra-gold-400);
+  --action-primary:var(--lyra-navy-700);--action-primary-hover:var(--lyra-navy-900);
+  --focus-ring:var(--lyra-gold-500);
+
+  --font-display:"Playfair Display",ui-serif,Georgia,serif;
+  --font-serif:"EB Garamond",ui-serif,Georgia,serif;
+  --font-script:"Sacramento",cursive;
+  --font-label:"Cormorant Garamond","EB Garamond",ui-serif,serif;
+
+  --text-3xs:.6875rem;--text-2xs:.75rem;--text-xs:.8125rem;--text-sm:.9375rem;--text-md:1.0625rem;
+  --text-lg:1.25rem;--text-xl:1.5rem;--text-2xl:1.875rem;--text-3xl:2.375rem;--text-4xl:3rem;--text-5xl:3.875rem;
+  --tracking-tight:-.015em;--tracking-label:.14em;--tracking-eyebrow:.28em;
+
+  --space-2:4px;--space-3:8px;--space-4:12px;--space-5:16px;--space-6:20px;--space-7:24px;
+  --space-8:32px;--space-9:40px;--space-10:48px;--space-11:64px;--space-12:80px;--space-13:104px;
+
+  --radius-xs:2px;--radius-sm:4px;
+  --shadow-card:0 2px 10px rgba(12,32,80,.07);
+  --shadow-lifted:0 20px 48px rgba(12,32,80,.18);
+  --shadow-frame:0 14px 34px rgba(42,24,8,.28),0 2px 6px rgba(42,24,8,.22);
+  --gild-gold:linear-gradient(100deg,#8f6b3a 0%,#d9be8e 28%,#a88054 52%,#e8d6b6 74%,#8f6b3a 100%);
+  --scrim-bottom:linear-gradient(to top,rgba(12,32,80,.82) 0%,rgba(12,32,80,.45) 38%,rgba(12,32,80,0) 78%);
+
+  --ease-out-soft:cubic-bezier(.16,.84,.34,1);
+  --transition-control:color .16s var(--ease-out-soft),background-color .16s var(--ease-out-soft),border-color .16s var(--ease-out-soft),box-shadow .16s var(--ease-out-soft);
+  --transition-lift:transform .24s var(--ease-out-soft),box-shadow .24s var(--ease-out-soft);
+
+  --header-h:76px;
+  --wrap:1120px;
+  --gutter:24px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-serif);font-size:var(--text-md);line-height:1.5;text-wrap:pretty;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--text-heading);line-height:1.18;letter-spacing:var(--tracking-tight);margin:0}
+p{margin:0}
+img,video{max-width:100%;display:block}
+a{color:var(--lyra-gold-800);text-decoration-thickness:1px;text-underline-offset:3px;transition:var(--transition-control)}
+a:hover{color:var(--lyra-navy-700)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+::selection{background:var(--lyra-gold-200);color:var(--lyra-navy-900)}
+section[id]{scroll-margin-top:calc(var(--header-h) - 1px)}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:var(--space-5);top:-100px;z-index:100;background:var(--lyra-navy-900);color:var(--lyra-cream-50);padding:var(--space-4) var(--space-6);font-family:var(--font-label);font-weight:600;letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:var(--text-xs);text-decoration:none}
+.skip:focus{top:var(--space-4);color:var(--lyra-cream-50)}
+
+/* ---------- tipografia utilitária ---------- */
+.eyebrow{font-family:var(--font-label);font-size:var(--text-2xs);font-weight:600;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-accent)}
+.on-navy .eyebrow{color:var(--lyra-gold-300)}
+.h2{font-style:italic;font-weight:700;font-size:clamp(1.875rem,1.4rem + 2vw,2.625rem);line-height:1.08}
+.on-navy .h2{color:var(--lyra-cream-50)}
+.section-head{display:grid;gap:var(--space-4);justify-items:center;text-align:center;margin-bottom:var(--space-10)}
+.section-head .fleuron{width:210px;height:auto;margin-top:var(--space-2)}
+.lead{font-size:var(--text-lg);line-height:1.6;max-width:64ch}
+.script{font-family:var(--font-script);font-weight:400;font-style:normal}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;padding:12px 22px;border-radius:var(--radius-xs);border:1px solid transparent;line-height:1.1;text-decoration:none;cursor:pointer;transition:var(--transition-control),transform .16s var(--ease-out-soft);text-align:center}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:var(--action-primary);color:var(--text-on-navy)}
+.btn-primary:hover{background:var(--action-primary-hover);color:var(--text-on-navy)}
+.btn-gold{background:var(--lyra-gold-500);color:var(--text-on-gold)}
+.btn-gold:hover{background:var(--lyra-gold-300);color:var(--text-on-gold)}
+.btn-outline{background:transparent;color:var(--lyra-navy-700);border-color:var(--lyra-navy-700)}
+.btn-outline:hover{background:var(--lyra-navy-700);color:var(--text-on-navy)}
+.on-navy .btn-outline,.btn-outline.light{color:var(--lyra-cream-50);border-color:var(--lyra-gold-300)}
+.on-navy .btn-outline:hover,.btn-outline.light:hover{background:var(--lyra-cream-50);color:var(--lyra-navy-900);border-color:var(--lyra-cream-50)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---------- cabeçalho ---------- */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);background:var(--lyra-cream-50);border-bottom:1px solid var(--lyra-gold-400);box-shadow:0 1px 2px rgba(42,24,8,.08)}
+.header .wrap{height:100%;display:flex;align-items:center;gap:var(--space-7);max-width:1280px}
+.brand{display:flex;align-items:center;gap:var(--space-4);text-decoration:none;color:var(--lyra-navy-700);flex:none}
+.brand img{width:44px;height:auto}
+.brand span{font-family:var(--font-display);font-style:italic;font-weight:900;font-size:1.5rem;letter-spacing:-.03em;line-height:1}
+.brand:hover{color:var(--lyra-navy-900)}
+.nav{display:flex;align-items:center;gap:var(--space-2);margin-left:auto}
+.nav ul{display:flex;align-items:center;gap:var(--space-2);list-style:none;margin:0;padding:0}
+.nav a.link{display:block;white-space:nowrap;padding:10px 10px;font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--lyra-navy-700);text-decoration:none;border-bottom:1px solid transparent}
+.nav a.link:hover{color:var(--lyra-navy-900);border-bottom-color:var(--lyra-gold-500)}
+.nav a.link[aria-current="true"]{border-bottom-color:var(--lyra-gold-600);color:var(--lyra-navy-900)}
+.nav .btn{margin-left:var(--space-4);padding:11px 16px;font-size:var(--text-2xs);white-space:nowrap}
+.menu-toggle{display:none;margin-left:auto;background:transparent;border:1px solid var(--lyra-navy-700);border-radius:var(--radius-xs);color:var(--lyra-navy-700);width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center}
+.menu-toggle svg{width:22px;height:22px}
+.menu-toggle .x{display:none}
+.menu-toggle[aria-expanded="true"] .x{display:block}
+.menu-toggle[aria-expanded="true"] .bars{display:none}
+
+@media (max-width:1200px){
+  .menu-toggle{display:flex}
+  .nav{position:absolute;top:100%;left:0;right:0;margin:0;background:var(--lyra-cream-50);border-bottom:1px solid var(--lyra-gold-400);box-shadow:0 14px 28px rgba(12,32,80,.14);flex-direction:column;align-items:stretch;padding:var(--space-4) var(--gutter) var(--space-7);gap:var(--space-3);display:none}
+  .nav.open{display:flex}
+  .nav ul{flex-direction:column;align-items:stretch;gap:0}
+  .nav a.link{padding:14px 0;border-bottom:1px dotted var(--lyra-gold-600);font-size:var(--text-sm)}
+  .nav .btn{margin:var(--space-4) 0 0;width:100%;padding:14px 18px;font-size:var(--text-xs)}
+}
+
+/* ---------- 1. hero ---------- */
+.hero{position:relative;background:var(--lyra-navy-700);color:var(--text-on-navy);padding-top:var(--header-h);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url("assets/ornamentos/watermark-staff-gold.png") no-repeat right -40px top 40px / min(520px,60vw);opacity:.3;z-index:-1;pointer-events:none}
+.hero-main{display:grid;gap:var(--space-10);align-items:center;padding-block:var(--space-12) var(--space-11);min-height:calc(100svh - var(--header-h) - 150px)}
+.hero-seal{display:inline-block;font-family:var(--font-label);font-weight:600;font-size:var(--text-2xs);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--lyra-gold-300);padding-bottom:var(--space-3);border-bottom:1px solid var(--lyra-gold-400);margin-bottom:var(--space-7)}
+.hero h1{color:var(--lyra-cream-50);display:flex;flex-direction:column;font-style:italic;font-weight:900;line-height:.94;letter-spacing:-.03em}
+.hero h1 .name{font-size:clamp(3.5rem,2rem + 7vw,6.5rem)}
+.hero h1 .tag{font-family:var(--font-script);font-style:normal;font-weight:400;letter-spacing:0;line-height:1;font-size:clamp(1.9rem,1.2rem + 2.6vw,3.2rem);color:var(--lyra-gold-300);margin-top:-.2em;padding-left:.15em}
+.hero .sub{margin-top:var(--space-8);max-width:54ch;font-size:var(--text-lg);line-height:1.55;color:var(--lyra-cream-50)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:var(--space-5);margin-top:var(--space-9)}
+.frame{margin:0;padding:18px;background:var(--gild-gold);box-shadow:var(--shadow-frame);border-radius:var(--radius-xs);transform:rotate(1deg);max-width:560px;width:100%;justify-self:center}
+.frame .inner{padding:6px;background:linear-gradient(180deg,var(--lyra-gold-200),var(--lyra-gold-400))}
+.frame .pic{aspect-ratio:4/3;overflow:hidden;background:var(--lyra-navy-100);border:1px solid rgba(42,24,8,.35)}
+.frame .pic img{width:100%;height:100%;object-fit:cover}
+.pic.sem-foto,.thumb.sem-foto{background:var(--lyra-navy-100) url("assets/ornamentos/watermark-staff-navy.png") no-repeat center / 45%}
+.sem-foto img{opacity:0}
+
+.strip{border-top:1px solid var(--lyra-gold-400);background:var(--lyra-navy-900)}
+.strip ul{list-style:none;margin:0 auto;padding:0;max-width:var(--wrap);display:grid;grid-template-columns:repeat(2,1fr)}
+.strip li{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px;padding:var(--space-7) var(--space-5);border-bottom:1px solid rgba(201,168,120,.35)}
+.strip li:nth-child(odd){border-right:1px solid rgba(201,168,120,.35)}
+.strip li:nth-last-child(-n+2){border-bottom:0}
+.strip strong{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:var(--text-2xl);line-height:1.1;color:var(--lyra-gold-300)}
+.strip .long{font-size:var(--text-xl)}
+.strip small{font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--lyra-cream-50)}
+@media (min-width:860px){
+  .strip ul{grid-template-columns:repeat(4,1fr)}
+  .strip li{border-bottom:0!important;border-right:1px solid rgba(201,168,120,.35)!important}
+  .strip li:last-child{border-right:0!important}
+  .strip strong{font-size:var(--text-3xl)}
+}
+@media (min-width:900px){
+  .hero-main{grid-template-columns:1.1fr .9fr;gap:var(--space-11)}
+}
+
+/* ---------- 2. quem somos ---------- */
+.about{padding-block:var(--space-13)}
+.about-grid{display:grid;gap:var(--space-10);align-items:center}
+.about h2{margin:var(--space-4) 0 var(--space-7)}
+.about p+p{margin-top:var(--space-6)}
+.about p{font-size:var(--text-lg);line-height:1.65;max-width:56ch}
+.about .frame{transform:rotate(-1deg);max-width:480px}
+.about .frame .pic{aspect-ratio:4/5}
+@media (min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:var(--space-12)}}
+
+/* ---------- 3. Lyra em Movimento ---------- */
+.project{padding-block:var(--space-13);background:var(--lyra-cream-200);border-block:1px solid var(--lyra-cream-300);position:relative}
+.project .mark{width:min(260px,60%);height:auto;margin:0 auto var(--space-6)}
+.project .intro{display:grid;gap:var(--space-6);max-width:64ch;margin-inline:auto;text-align:center}
+.project .intro .lead{margin-inline:auto}
+.why{margin:var(--space-9) auto 0;max-width:62ch;text-align:center;padding:var(--space-7) var(--space-7);border-top:1px dotted var(--lyra-gold-600);border-bottom:1px dotted var(--lyra-gold-600)}
+.why h3{font-size:var(--text-xl);font-style:italic;font-weight:700;margin-bottom:var(--space-3)}
+.sub-h{font-style:italic;font-weight:700;font-size:var(--text-2xl);text-align:center;margin:var(--space-12) 0 var(--space-8)}
+.cards{display:grid;gap:var(--space-6);grid-template-columns:1fr}
+.card{background:var(--surface-card);border:1px solid var(--lyra-cream-300);border-radius:var(--radius-sm);box-shadow:var(--shadow-card);padding:var(--space-8);display:grid;gap:var(--space-3);align-content:start;transition:var(--transition-lift)}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lifted)}
+.card dt{font-family:var(--font-label);font-weight:600;font-size:var(--text-2xs);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-accent)}
+.card dd{margin:0;font-family:var(--font-display);font-style:italic;font-weight:700;font-size:var(--text-xl);line-height:1.2;color:var(--lyra-navy-700)}
+.card dd.small{font-size:var(--text-lg);font-weight:600}
+dl.cards{margin:0}
+.note{text-align:center;max-width:62ch;margin:var(--space-8) auto 0;font-size:var(--text-lg)}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+.table-wrap{max-width:860px;margin-inline:auto}
+table.turmas{width:100%;border-collapse:collapse;background:var(--surface-card);border:1px solid var(--lyra-gold-400);box-shadow:var(--shadow-card)}
+.turmas caption{caption-side:top;text-align:left;padding:0 0 var(--space-4);font-family:var(--font-label);font-weight:600;font-size:var(--text-2xs);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-accent)}
+.turmas th,.turmas td{padding:var(--space-6) var(--space-7);text-align:left;border-bottom:1px solid var(--lyra-cream-300)}
+.turmas thead th{background:var(--lyra-navy-700);color:var(--lyra-cream-50);font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:0}
+.turmas tbody th{font-family:var(--font-display);font-style:italic;font-weight:700;color:var(--lyra-navy-700);font-size:var(--text-lg)}
+.turmas tbody tr:last-child>*{border-bottom:0}
+.turmas td.vagas{font-family:var(--font-display);font-style:italic;font-weight:700;color:var(--lyra-navy-700);font-size:var(--text-lg)}
+.support{text-align:center;margin-top:var(--space-6);font-size:var(--text-lg)}
+@media (max-width:700px){
+  .turmas thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .turmas,.turmas tbody,.turmas tr,.turmas th,.turmas td{display:block}
+  .turmas tr{padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--lyra-gold-400)}
+  .turmas tr:last-child{border-bottom:0}
+  .turmas th,.turmas td{padding:var(--space-2) 0;border:0!important}
+  .turmas td[data-label]::before{content:attr(data-label) ": ";font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-accent)}
+}
+
+.pi{display:grid;gap:var(--space-6);margin-top:var(--space-12);max-width:860px;margin-inline:auto}
+.pi article{background:var(--surface-card);border:1px solid var(--lyra-gold-400);border-radius:var(--radius-sm);padding:var(--space-8);box-shadow:var(--shadow-card)}
+.pi h3{font-style:italic;font-weight:700;font-size:var(--text-xl);margin-bottom:var(--space-3)}
+@media (min-width:760px){.pi{grid-template-columns:1fr 1fr}}
+
+.done{margin:var(--space-12) auto 0;max-width:860px;background:var(--lyra-navy-700);color:var(--text-on-navy);border:1px solid var(--lyra-gold-400);border-radius:var(--radius-sm);padding:var(--space-11) var(--space-8);text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.done::before{content:"";position:absolute;inset:0;background:url("assets/ornamentos/watermark-staff-gold.png") no-repeat right -30px bottom -20px / 300px;opacity:.28;z-index:-1}
+.done .seal{display:inline-block;font-family:var(--font-label);font-weight:600;font-size:var(--text-2xs);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-on-gold);background:var(--lyra-gold-500);padding:6px 12px;border-radius:var(--radius-xs)}
+.done h3{color:var(--lyra-cream-50);font-style:italic;font-weight:700;font-size:clamp(1.75rem,1.3rem + 1.8vw,2.375rem);margin:var(--space-6) 0 var(--space-5)}
+.done p{max-width:52ch;margin-inline:auto;font-size:var(--text-lg)}
+.done .actions{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;margin-top:var(--space-9)}
+
+/* ---------- 4. formação ---------- */
+.formacao{background:var(--lyra-navy-900);color:var(--text-on-navy);padding-block:var(--space-13);position:relative;overflow:hidden;isolation:isolate}
+.formacao::before{content:"";position:absolute;inset:0;background:url("assets/ornamentos/watermark-staff-gold.png") no-repeat left -60px top -10px / 420px;opacity:.22;z-index:-1;transform:scaleX(-1)}
+.pillars{display:grid;gap:var(--space-6);grid-template-columns:1fr}
+.pillar{border:1px solid rgba(201,168,120,.55);border-radius:var(--radius-sm);padding:var(--space-9) var(--space-8);background:var(--lyra-navy-700);display:grid;gap:var(--space-5);align-content:start}
+.pillar svg{width:40px;height:40px;stroke:var(--lyra-gold-300);fill:none;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter}
+.pillar h3{color:var(--lyra-cream-50);font-style:italic;font-weight:700;font-size:var(--text-2xl)}
+.pillar p{font-size:var(--text-md);line-height:1.6}
+.closing{text-align:center;margin-top:var(--space-11);font-family:var(--font-display);font-style:italic;font-weight:700;font-size:clamp(1.5rem,1.1rem + 1.6vw,2.25rem);color:var(--lyra-gold-300)}
+@media (min-width:860px){.pillars{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- 5. a Lyra em ação ---------- */
+.action{padding-block:var(--space-13)}
+.filters{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;margin-bottom:var(--space-9)}
+.filters[hidden]{display:none}
+.filters button{font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;padding:10px 18px;border:1px solid var(--lyra-navy-700);background:transparent;color:var(--lyra-navy-700);border-radius:var(--radius-xs);cursor:pointer;transition:var(--transition-control)}
+.filters button:hover{background:var(--lyra-navy-100)}
+.filters button[aria-pressed="true"]{background:var(--lyra-navy-700);color:var(--lyra-cream-50)}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4)}
+.grid li[hidden]{display:none}
+.grid button.open{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;position:relative}
+.thumb{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--lyra-navy-100);border:1px solid var(--lyra-cream-300);box-shadow:var(--shadow-card);transition:var(--transition-lift)}
+.thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.92);transition:transform .42s var(--ease-out-soft)}
+.grid button.open:hover .thumb{transform:translateY(-2px);box-shadow:var(--shadow-lifted)}
+.grid button.open:hover img{transform:scale(1.03)}
+@media (min-width:860px){.grid{grid-template-columns:repeat(3,1fr);gap:var(--space-6)}}
+.empty-msg{text-align:center;margin-top:var(--space-7);font-size:var(--text-lg)}
+
+.feature{margin-top:var(--space-12);display:grid;gap:var(--space-6);justify-items:center}
+.feature h3{font-style:italic;font-weight:700;font-size:var(--text-2xl);text-align:center}
+.player{width:100%;max-width:880px;padding:14px;background:var(--gild-gold);box-shadow:var(--shadow-frame);border-radius:var(--radius-xs)}
+.player video{width:100%;aspect-ratio:16/9;background:var(--lyra-navy-900);object-fit:contain}
+
+.depoimentos-wrap{margin-top:var(--space-13)}
+.depoimentos-wrap[hidden]{display:none}
+.depoimentos-wrap h3{font-style:italic;font-weight:700;font-size:var(--text-2xl);text-align:center;margin-bottom:var(--space-9)}
+.deps{display:grid;gap:var(--space-7);grid-template-columns:1fr}
+.dep{background:var(--surface-card);border:1px solid var(--lyra-gold-400);border-radius:var(--radius-sm);box-shadow:var(--shadow-card);overflow:hidden;display:grid}
+.dep .media{aspect-ratio:16/9;background:var(--lyra-navy-900)}
+.dep .media video,.dep .media iframe{width:100%;height:100%;border:0;object-fit:cover}
+.dep .play{width:100%;height:100%;border:0;background:var(--lyra-navy-700) center/cover no-repeat;color:var(--lyra-cream-50);cursor:pointer;display:grid;place-items:center}
+.dep .play span{display:grid;place-items:center;width:64px;height:64px;border:1px solid var(--lyra-gold-300);border-radius:50%;background:rgba(12,32,80,.7)}
+.dep .play svg{width:26px;height:26px;fill:var(--lyra-gold-300);margin-left:3px}
+.dep figcaption{padding:var(--space-6) var(--space-7)}
+.dep .nome{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:var(--text-lg);color:var(--lyra-navy-700)}
+.dep .papel{font-family:var(--font-label);font-weight:600;font-size:var(--text-2xs);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-accent);margin-top:var(--space-2)}
+@media (min-width:700px){.deps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.deps{grid-template-columns:repeat(3,1fr)}}
+.big-phrase{text-align:center;margin-top:var(--space-12);font-family:var(--font-display);font-style:italic;font-weight:900;letter-spacing:-.03em;line-height:1.05;font-size:clamp(2rem,1.2rem + 3.5vw,3.75rem);color:var(--lyra-navy-700)}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:var(--lyra-cream-50)}
+dialog.lb::backdrop{background:rgba(12,32,80,.94)}
+.lb-inner{width:100%;height:100%;display:grid;grid-template-rows:1fr auto;padding:var(--space-7) var(--space-5) var(--space-6);gap:var(--space-5)}
+.lb figure{margin:0;display:grid;place-items:center;min-height:0}
+.lb figure img{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain;border:1px solid var(--lyra-gold-400);box-shadow:var(--shadow-frame)}
+.lb-bar{display:flex;align-items:center;justify-content:center;gap:var(--space-5);flex-wrap:wrap;text-align:center}
+.lb-cap{font-family:var(--font-label);font-weight:600;letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:var(--text-sm);color:var(--lyra-gold-300);min-width:0}
+.lb button{width:48px;height:48px;border:1px solid var(--lyra-gold-300);background:rgba(12,32,80,.7);color:var(--lyra-cream-50);border-radius:var(--radius-xs);cursor:pointer;display:grid;place-items:center;transition:var(--transition-control)}
+.lb button:hover{background:var(--lyra-cream-50);color:var(--lyra-navy-900)}
+.lb button svg{width:22px;height:22px}
+.lb .close{position:absolute;top:var(--space-5);right:var(--space-5)}
+.lb .count{font-family:var(--font-label);font-size:var(--text-sm);letter-spacing:var(--tracking-label);color:var(--lyra-cream-50)}
+
+/* ---------- 6. parceiros ---------- */
+.partners{padding-block:var(--space-13);background:var(--lyra-cream-200);border-top:1px solid var(--lyra-cream-300)}
+.partners .txt{max-width:62ch;margin:0 auto var(--space-9);text-align:center;font-size:var(--text-lg);line-height:1.65}
+.logos{max-width:980px;margin-inline:auto;background:var(--lyra-white);border:1px solid var(--lyra-gold-400);border-radius:var(--radius-sm);box-shadow:var(--shadow-card);padding:var(--space-7)}
+.logos img{width:100%;height:auto}
+
+/* ---------- 7. contato ---------- */
+.contact{padding-block:var(--space-13)}
+.contact-grid{display:grid;gap:var(--space-6);max-width:960px;margin-inline:auto}
+.contact .card dd.addr{font-family:var(--font-serif);font-style:normal;font-weight:500;font-size:var(--text-lg);line-height:1.45;color:var(--lyra-navy-800)}
+.contact .card .link-row{margin-top:var(--space-3)}
+.link-row a{display:inline-flex;align-items:center;gap:var(--space-3);font-family:var(--font-label);font-weight:600;font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--lyra-gold-800)}
+.link-row a:hover{color:var(--lyra-navy-700)}
+.link-row svg,.social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.phone{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:var(--text-2xl);color:var(--lyra-navy-700);text-decoration:none}
+.phone:hover{color:var(--lyra-gold-800)}
+.social{display:flex;gap:var(--space-4);margin-top:var(--space-3)}
+.social a{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--lyra-navy-700);border-radius:var(--radius-xs);color:var(--lyra-navy-700);text-decoration:none}
+.social a:hover{background:var(--lyra-navy-700);color:var(--lyra-cream-50)}
+.social a svg{width:22px;height:22px}
+@media (min-width:760px){.contact-grid{grid-template-columns:1fr 1fr}.contact-grid .wide{grid-column:1/-1}}
+
+/* ---------- rodapé ---------- */
+.footer{background:var(--lyra-navy-900);color:var(--lyra-cream-50);padding-block:var(--space-11) var(--space-9);text-align:center;border-top:1px solid var(--lyra-gold-400)}
+.footer img{width:56px;height:auto;margin:0 auto var(--space-7)}
+.footer p{font-size:var(--text-sm);line-height:1.7}
+.footer p+p{margin-top:var(--space-2)}
+.footer .dotted{border:0;border-top:1px dotted var(--lyra-gold-600);margin:var(--space-7) auto;max-width:520px}
+.footer .copy{color:var(--lyra-navy-200)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Banda Lyra, início">
+      <img src="assets/img/crest-navy.svg" alt="" width="44" height="41">
+      <span>Banda Lyra</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <ul>
+        <li><a class="link" href="#inicio">Início</a></li>
+        <li><a class="link" href="#quem-somos">Quem somos</a></li>
+        <li><a class="link" href="#lyra-em-movimento">Lyra em Movimento</a></li>
+        <li><a class="link" href="#lyra-em-acao">A Lyra em ação</a></li>
+        <li><a class="link" href="#parceiros">Parceiros</a></li>
+        <li><a class="link" href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-primary" href="https://editaldeselecaooficinaslyra.lovable.app/" target="_blank" rel="noopener noreferrer">Ver Edital e Resultado Final</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- 1. HERO -->
+<section class="hero on-navy" id="inicio" aria-labelledby="titulo-hero">
+  <div class="wrap hero-main">
+    <div>
+      <p class="hero-seal">Projeto Lyra em Movimento · Paracatu/MG · 2026</p>
+      <h1 id="titulo-hero">
+        <span class="name">Banda Lyra.</span>
+        <span class="tag">Seu caminho para a música começa aqui.</span>
+      </h1>
+      <p class="sub">A Sociedade Corporação Musical Lyra Paracatuense leva música, aprendizado e cidadania para crianças e adolescentes de Paracatu/MG, com o Projeto Lyra em Movimento.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#lyra-em-movimento">Conheça o Lyra em Movimento</a>
+        <a class="btn btn-outline" href="#lyra-em-acao">Veja a Lyra em ação</a>
+      </div>
+    </div>
+    <figure class="frame">
+      <div class="inner"><div class="pic">
+        <img src="assets/fotos/integrar-na-praca-2026-10-17-01.jpeg" alt="Apresentação da Banda Lyra no Integrar na Praça, em Paracatu" width="1200" height="900" fetchpriority="high" decoding="async">
+      </div></div>
+    </figure>
+  </div>
+  <div class="strip">
+    <ul aria-label="Destaques do projeto">
+      <li><strong>30</strong><small>vagas gratuitas</small></li>
+      <li><strong>9 a 16</strong><small>anos</small></li>
+      <li><small>Bolsa-Incentivo de</small><strong>R$ 200,00</strong><small>por mês</small></li>
+      <li><strong class="long">Julho a dezembro</strong><small>de 2026</small></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2. QUEM SOMOS -->
+<section class="about" id="quem-somos" aria-labelledby="titulo-quem-somos">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">A banda</span>
+      <h2 class="h2" id="titulo-quem-somos">Quem somos</h2>
+      <p>A Banda Lyra é a Sociedade Corporação Musical Lyra Paracatuense. É a banda que toca nos palcos, nas praças e nas ruas de Paracatu. Para muita gente da cidade, é também o lugar onde se aprende a tocar um instrumento e a fazer parte de algo maior.</p>
+      <p>Na banda, ninguém toca sozinho. Cada instrumento depende do outro. Por isso a Lyra forma músicos e também pessoas que sabem ouvir, esperar a vez e fazer junto.</p>
+      <!-- PENDÊNCIA (parágrafo 3): frase sobre a história da banda, com o ano de fundação e um marco.
+           Aguardando texto da equipe. Quando chegar, inserir aqui um <p> igual aos de cima. -->
+    </div>
+    <figure class="frame">
+      <div class="inner"><div class="pic">
+        <img src="assets/fotos/integrar-na-praca-2026-10-17-02.jpeg" alt="Músicos da Banda Lyra durante apresentação no Integrar na Praça, em Paracatu, em 17 de outubro de 2026" width="1000" height="1250" loading="lazy" decoding="async">
+      </div></div>
+    </figure>
+  </div>
+</section>
+
+<!-- 3. LYRA EM MOVIMENTO -->
+<section class="project" id="lyra-em-movimento" aria-labelledby="titulo-projeto">
+  <div class="wrap">
+    <div class="section-head">
+      <img class="mark" src="assets/img/lyra-em-movimento.png" alt="Marca do Projeto Lyra em Movimento: Música, Educação e Cidadania" width="309" height="218" loading="lazy">
+      <span class="eyebrow">O projeto</span>
+      <h2 class="h2" id="titulo-projeto">Lyra em Movimento: Música, Educação e Cidadania</h2>
+      <img class="fleuron" src="assets/ornamentos/divider-gold-fleuron.png" alt="" aria-hidden="true" width="397" height="91">
+    </div>
+
+    <div class="intro">
+      <p class="lead">Uma oportunidade gratuita de formação musical para crianças e adolescentes de Paracatu/MG. As Oficinas de Formação Musical do Projeto Lyra em Movimento reúnem aulas, ensaios, atividades coletivas e apresentações públicas, com formação artística para quem quer começar a tocar.</p>
+    </div>
+
+    <div class="why">
+      <h3>Por que “em movimento”</h3>
+      <p>A tradição da Lyra não fica parada. Ela se renova a cada nova turma: abre as portas, forma novos músicos e leva a música para a rua.</p>
+    </div>
+
+    <h3 class="sub-h">Destaques do projeto</h3>
+    <dl class="cards">
+      <div class="card"><dt>Vagas gratuitas</dt><dd>30 vagas</dd></div>
+      <div class="card"><dt>Faixa etária</dt><dd>9 a 16 anos</dd></div>
+      <div class="card"><dt>Bolsa-Incentivo</dt><dd>R$ 200,00 por mês</dd></div>
+      <div class="card"><dt>Atividade</dt><dd>Oficinas de Música</dd></div>
+      <div class="card"><dt>Local</dt><dd class="small">Cáritas Diocesana, Rua do Ávila, 201, Centro, Paracatu/MG</dd></div>
+      <div class="card"><dt>Período</dt><dd>Julho a dezembro de 2026</dd></div>
+    </dl>
+    <p class="note">Os 30 bolsistas recebem a Bolsa-Incentivo mensal, e os instrumentos, os uniformes e os materiais didáticos são fornecidos pelo projeto.</p>
+
+    <h3 class="sub-h">Turmas</h3>
+    <div class="table-wrap">
+      <table class="turmas">
+        <caption>Turmas das Oficinas de Formação Musical</caption>
+        <thead><tr><th scope="col">Turma</th><th scope="col">Idade</th><th scope="col">Dias</th><th scope="col">Horário</th><th scope="col">Vagas</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Manhã</th><td data-label="Idade">9 a 12 anos</td><td data-label="Dias">Segunda e quarta-feira</td><td data-label="Horário">9h às 10h30</td><td class="vagas" data-label="Vagas">15</td></tr>
+          <tr><th scope="row">Tarde</th><td data-label="Idade">13 a 16 anos</td><td data-label="Dias">Terça e quinta-feira</td><td data-label="Horário">14h30 às 16h</td><td class="vagas" data-label="Vagas">15</td></tr>
+        </tbody>
+      </table>
+      <p class="support">Duas aulas por semana, de 1h30 cada, em turmas organizadas por faixa etária.</p>
+    </div>
+
+    <div class="pi">
+      <article>
+        <h3>Prioridade</h3>
+        <p>Tiveram prioridade os candidatos em situação de vulnerabilidade social, para que a formação musical chegue a quem mais precisa dela.</p>
+      </article>
+      <article>
+        <h3>Inclusão</h3>
+        <p>Das 30 vagas, 3 (10%) foram reservadas a candidatos com deficiência.</p>
+      </article>
+    </div>
+
+    <div class="done on-navy">
+      <span class="seal">Processo seletivo concluído</span>
+      <h3>Parabéns aos selecionados!</h3>
+      <p>Boas-vindas às novas alunas e aos novos alunos do Projeto Lyra em Movimento. Estamos muito felizes em iniciar esta jornada de formação musical, aprendizado e cidadania com vocês.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://drive.google.com/file/d/1kWIMn9IPkdtZmWL8BnFp_dZT9NwMy3Si/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver Resultado Final da Seleção</a>
+        <a class="btn btn-outline" href="https://drive.google.com/file/d/1b5LZhxFIkOUlm9LBiV6e2v4JSNyJwDe3/view?usp=sharing" target="_blank" rel="noopener noreferrer">Baixar o Edital Retificado (PDF)</a>
+        <a class="btn btn-outline" href="https://editaldeselecaooficinaslyra.lovable.app/" target="_blank" rel="noopener noreferrer">Conhecer a página do edital</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMO A MÚSICA FORMA CIDADÃOS (sem item no menu) -->
+<section class="formacao on-navy" id="formacao" aria-labelledby="titulo-formacao">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Formação artística</span>
+      <h2 class="h2" id="titulo-formacao">Como a música forma cidadãos</h2>
+      <img class="fleuron" src="assets/ornamentos/divider-gold-fleuron.png" alt="" aria-hidden="true" width="397" height="91">
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <h3>Aprender</h3>
+        <p>Duas aulas por semana de formação musical, em turmas organizadas por faixa etária. Aqui o caminho para a música começa do zero, sem exigência de experiência.</p>
+      </article>
+      <article class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3>Tocar junto</h3>
+        <p>Ensaios, atividades coletivas e apresentações públicas fazem parte do percurso. Quem aprende na Lyra também sobe ao palco e toca para a cidade.</p>
+      </article>
+      <article class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <h3>Pertencer</h3>
+        <p>A Bolsa-Incentivo caminha junto com a escola: frequência mínima de 80% nas aulas e acompanhamento do rendimento escolar, em parceria com a instituição de ensino. Na Lyra, estudar e tocar andam juntos.</p>
+      </article>
+    </div>
+    <p class="closing">Música, aprendizado e cidadania.</p>
+  </div>
+</section>
+
+<!-- 5. A LYRA EM AÇÃO -->
+<section class="action" id="lyra-em-acao" aria-labelledby="titulo-acao">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Galeria</span>
+      <h2 class="h2" id="titulo-acao">A Lyra em ação</h2>
+      <p class="lead">Apresentações, oficinas e aulas: a música acontecendo em Paracatu.</p>
+    </div>
+
+    <!-- Filtros: a página esconde sozinha o botão de uma categoria sem fotos.
+         Para uma foto entrar em "Apresentações", "Oficinas" ou "Aulas", preencha data-cat no <li>
+         com apresentacao, oficina ou aula. Fotos sem data-cat aparecem só em "Todas". -->
+    <div class="filters" role="group" aria-label="Filtrar fotos por categoria" id="filtros">
+      <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+      <button type="button" data-filtro="apresentacao" aria-pressed="false">Apresentações</button>
+      <button type="button" data-filtro="oficina" aria-pressed="false">Oficinas</button>
+      <button type="button" data-filtro="aula" aria-pressed="false">Aulas</button>
+    </div>
+
+    <ul class="grid" id="galeria">
+      <li data-cat="apresentacao"><button type="button" class="open" data-legenda="Integrar na Praça · 17 de outubro de 2026" aria-label="Ampliar foto: Integrar na Praça · 17 de outubro de 2026"><span class="thumb"><img src="assets/fotos/integrar-na-praca-2026-10-17-03.jpeg" alt="Apresentação da Banda Lyra no Integrar na Praça, em Paracatu, em 17 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li data-cat="apresentacao"><button type="button" class="open" data-legenda="Integrar na Praça · 17 de outubro de 2026" aria-label="Ampliar foto: Integrar na Praça · 17 de outubro de 2026"><span class="thumb"><img src="assets/fotos/integrar-na-praca-2026-10-17-04.jpeg" alt="Banda Lyra tocando no Integrar na Praça, em Paracatu, em 17 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 30 de agosto de 2026" aria-label="Ampliar foto: Encontro · 30 de agosto de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-08-30-01.jpeg" alt="Encontro da Banda Lyra em Paracatu, em 30 de agosto de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 30 de agosto de 2026" aria-label="Ampliar foto: Encontro · 30 de agosto de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-08-30-02.jpeg" alt="Participantes do encontro da Banda Lyra em Paracatu, em 30 de agosto de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 30 de agosto de 2026" aria-label="Ampliar foto: Encontro · 30 de agosto de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-08-30-03.jpeg" alt="Momento do encontro da Banda Lyra em Paracatu, em 30 de agosto de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 26 de setembro de 2026" aria-label="Ampliar foto: Encontro · 26 de setembro de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-09-26-01.jpeg" alt="Encontro da Banda Lyra em Paracatu, em 26 de setembro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 26 de setembro de 2026" aria-label="Ampliar foto: Encontro · 26 de setembro de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-09-26-02.jpeg" alt="Participantes do encontro da Banda Lyra em Paracatu, em 26 de setembro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Encontro · 26 de setembro de 2026" aria-label="Ampliar foto: Encontro · 26 de setembro de 2026"><span class="thumb"><img src="assets/fotos/encontro-2026-09-26-03.jpeg" alt="Momento do encontro da Banda Lyra em Paracatu, em 26 de setembro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio e visita da Kinross · 8 de outubro de 2026" aria-label="Ampliar foto: Ensaio e visita da Kinross · 8 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-kinross-2026-10-08-01.jpeg" alt="Ensaio da Banda Lyra com a visita da Kinross, em Paracatu, em 8 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio e visita da Kinross · 8 de outubro de 2026" aria-label="Ampliar foto: Ensaio e visita da Kinross · 8 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-kinross-2026-10-08-02.jpeg" alt="Músicos da Banda Lyra no ensaio com a visita da Kinross, em 8 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio e visita da Kinross · 8 de outubro de 2026" aria-label="Ampliar foto: Ensaio e visita da Kinross · 8 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-kinross-2026-10-08-03.jpeg" alt="Momento do ensaio da Banda Lyra com a visita da Kinross, em 8 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio · 14 de outubro de 2026" aria-label="Ampliar foto: Ensaio · 14 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-2026-10-14-01.jpeg" alt="Ensaio da Banda Lyra em Paracatu, em 14 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio · 14 de outubro de 2026" aria-label="Ampliar foto: Ensaio · 14 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-2026-10-14-02.jpeg" alt="Músicos da Banda Lyra durante o ensaio de 14 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+      <li><button type="button" class="open" data-legenda="Ensaio · 14 de outubro de 2026" aria-label="Ampliar foto: Ensaio · 14 de outubro de 2026"><span class="thumb"><img src="assets/fotos/ensaio-2026-10-14-03.jpeg" alt="Momento do ensaio da Banda Lyra, em Paracatu, em 14 de outubro de 2026" width="800" height="600" loading="lazy" decoding="async"></span></button></li>
+    </ul>
+    <p class="empty-msg" id="galeria-vazia" hidden>Nenhuma foto nesta categoria por enquanto.</p>
+
+    <div class="feature">
+      <h3>Integrar na Praça</h3>
+      <div class="player">
+        <!-- Sem som automático: o vídeo só toca quando a pessoa aperta o play. -->
+        <video controls preload="metadata" playsinline>
+          <source src="assets/videos/integrar-na-praca-2026-10-17.mp4" type="video/mp4">
+          Seu navegador não reproduz este vídeo.
+        </video>
+      </div>
+    </div>
+
+    <!-- DEPOIMENTOS
+         A seção só aparece quando existir pelo menos um .dep dentro de #depoimentos.
+         Nome, papel (aluno, aluna, responsável) e idade vêm da equipe da Lyra.
+         Os arquivos originais .MOV (35 a 240 MB) não devem ir para o GitHub: comprimir para MP4 leve
+         ou hospedar em vídeo não listado (YouTube) e usar data-youtube.
+
+         Modelo com MP4 leve (copie e preencha):
+         <figure class="dep">
+           <div class="media" data-mp4="assets/depoimentos/NOME-DO-ARQUIVO.mp4" data-poster="assets/depoimentos/NOME-DO-ARQUIVO.jpg" data-titulo="Depoimento de NOME"></div>
+           <figcaption><p class="nome">Nome da pessoa</p><p class="papel">Aluna, 12 anos</p></figcaption>
+         </figure>
+
+         Modelo com YouTube não listado (só o código do vídeo em data-youtube):
+         <figure class="dep">
+           <div class="media" data-youtube="CODIGO_DO_VIDEO" data-titulo="Depoimento de NOME"></div>
+           <figcaption><p class="nome">Nome da pessoa</p><p class="papel">Responsável</p></figcaption>
+         </figure>
+    -->
+    <div class="depoimentos-wrap" id="depoimentos-wrap" hidden>
+      <h3>Quem vive a Lyra conta como é</h3>
+      <div class="deps" id="depoimentos"></div>
+    </div>
+
+    <p class="big-phrase">Seu caminho para a música começa aqui.</p>
+  </div>
+</section>
+
+<!-- 6. QUEM FAZ ACONTECER -->
+<section class="partners" id="parceiros" aria-labelledby="titulo-parceiros">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Créditos</span>
+      <h2 class="h2" id="titulo-parceiros">Quem faz acontecer</h2>
+      <img class="fleuron" src="assets/ornamentos/divider-gold-fleuron.png" alt="" aria-hidden="true" width="397" height="91">
+    </div>
+    <p class="txt">O Projeto Lyra em Movimento é realizado com patrocínio da Kinross Paracatu, por meio da Lei Federal de Incentivo à Cultura (Lei Rouanet), e apoio da Cáritas Diocesana de Paracatu.</p>
+    <div class="logos">
+      <!-- Arquivo oficial do material do projeto, sem alterar proporção nem cores.
+           Salve em assets/img/logos-horizontal.jpg. Enquanto o arquivo local não existir,
+           a página carrega a mesma imagem da página do edital. -->
+      <img src="assets/img/logos-horizontal.jpg"
+           data-fallback="https://editaldeselecaooficinaslyra.lovable.app/__l5e/assets-v1/cf262978-676b-4acd-b8ff-cdcc131af099/logos-horizontal.jpg"
+           alt="Patrocínio: Kinross Paracatu. Apoio: Cáritas Diocesana de Paracatu. Realização: Sociedade Corporação Musical Lyra Paracatuense e Ministério da Cultura. Financiamento: Lei Rouanet."
+           width="1600" height="300" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 7. FALE COM A LYRA -->
+<section class="contact" id="contato" aria-labelledby="titulo-contato">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contato</span>
+      <h2 class="h2" id="titulo-contato">Fale com a Lyra</h2>
+      <img class="fleuron" src="assets/ornamentos/divider-gold-fleuron.png" alt="" aria-hidden="true" width="397" height="91">
+    </div>
+    <div class="contact-grid">
+      <div class="card">
+        <dl style="margin:0;display:grid;gap:var(--space-3)">
+          <dt>Sede da Banda Lyra</dt>
+          <dd class="addr">Rua Rafael Antão de Melo, 211, Centro, Paracatu/MG, CEP 38600-230</dd>
+        </dl>
+        <p class="link-row"><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Rafael+Ant%C3%A3o+de+Melo%2C+211%2C+Centro%2C+Paracatu%2FMG" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Ver no mapa<span class="sr-only"> (abre em nova aba): sede da Banda Lyra</span></a></p>
+      </div>
+      <div class="card">
+        <dl style="margin:0;display:grid;gap:var(--space-3)">
+          <dt>Local das oficinas</dt>
+          <dd class="addr">Cáritas Diocesana, Rua do Ávila, 201, Centro, Paracatu/MG, CEP 38600-114</dd>
+        </dl>
+        <p class="link-row"><a href="https://www.google.com/maps/search/?api=1&amp;query=C%C3%A1ritas+Diocesana%2C+Rua+do+%C3%81vila%2C+201%2C+Centro%2C+Paracatu%2FMG" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Ver no mapa<span class="sr-only"> (abre em nova aba): local das oficinas</span></a></p>
+      </div>
+      <div class="card">
+        <dl style="margin:0;display:grid;gap:var(--space-3)">
+          <dt>Telefone</dt>
+          <dd><a class="phone" href="tel:+5538999003676">(38) 9 9900-3676</a></dd>
+        </dl>
+      </div>
+      <div class="card">
+        <dl style="margin:0;display:grid;gap:var(--space-3)">
+          <dt>Redes sociais</dt>
+          <dd>
+            <!-- PENDÊNCIA: confirmar os perfis oficiais do Projeto Lyra em Movimento.
+                 O Instagram abaixo é o perfil @bandalyraparacatuense, citado no design system da banda.
+                 Para outra rede, copie o <a> e troque o link e o ícone. -->
+            <div class="social">
+              <a href="https://www.instagram.com/bandalyraparacatuense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Banda Lyra (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <img src="assets/img/crest-cream.svg" alt="Brasão da Banda Lyra" width="56" height="52" loading="lazy">
+    <p>Sociedade Corporação Musical Lyra Paracatuense · CNPJ 20.214.961/0001-06</p>
+    <p>Projeto Lyra em Movimento: Música, Educação e Cidadania · PRONAC 2413138</p>
+    <p>Ministério da Cultura e Kinross apresentam.</p>
+    <hr class="dotted">
+    <p class="copy">© 2026 Sociedade Corporação Musical Lyra Paracatuense. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Lightbox da galeria -->
+<dialog class="lb" id="lightbox" aria-label="Foto ampliada">
+  <div class="lb-inner">
+    <button type="button" class="close" id="lb-fechar" aria-label="Fechar foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <figure><img id="lb-img" src="" alt=""></figure>
+    <div class="lb-bar">
+      <button type="button" id="lb-ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div>
+        <p class="lb-cap" id="lb-legenda"></p>
+        <p class="count" id="lb-contagem" aria-live="polite"></p>
+      </div>
+      <button type="button" id="lb-prox" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- menu móvel ---------- */
+  var toggle = document.querySelector(".menu-toggle");
+  var menu = document.getElementById("menu");
+  function setMenu(open) {
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!menu.classList.contains("open")); });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); toggle.focus(); }
+  });
+
+  /* ---------- item ativo no menu ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a.link"));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window) {
+    var secoes = ["inicio", "quem-somos", "lyra-em-movimento", "formacao", "lyra-em-acao", "parceiros", "contato"]
+      .map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var id = en.target.id === "formacao" ? "lyra-em-movimento" : en.target.id;
+        links.forEach(function (a) { a.removeAttribute("aria-current"); });
+        if (map[id]) map[id].setAttribute("aria-current", "true");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secoes.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---------- imagem ausente: mostra o fundo de pauta em vez de ícone quebrado ---------- */
+  document.addEventListener("error", function (e) {
+    var el = e.target;
+    if (!el || el.tagName !== "IMG") return;
+    var fb = el.getAttribute("data-fallback");
+    if (fb && el.src !== fb) { el.removeAttribute("data-fallback"); el.src = fb; return; }
+    var box = el.closest(".pic, .thumb");
+    if (box) box.classList.add("sem-foto");
+  }, true);
+
+  /* ---------- galeria: filtros ---------- */
+  var lista = document.getElementById("galeria");
+  var itens = Array.prototype.slice.call(lista.querySelectorAll("li"));
+  var filtros = document.getElementById("filtros");
+  var botoes = Array.prototype.slice.call(filtros.querySelectorAll("button"));
+  var vazia = document.getElementById("galeria-vazia");
+  var filtroAtual = "todas";
+
+  var categoriasComFoto = {};
+  itens.forEach(function (li) { var c = li.getAttribute("data-cat"); if (c) categoriasComFoto[c] = true; });
+  botoes.forEach(function (b) {
+    var f = b.getAttribute("data-filtro");
+    if (f !== "todas" && !categoriasComFoto[f]) b.hidden = true;
+  });
+  if (!Object.keys(categoriasComFoto).length) filtros.hidden = true;
+
+  function aplicarFiltro(f) {
+    filtroAtual = f;
+    var visiveis = 0;
+    itens.forEach(function (li) {
+      var mostra = f === "todas" || li.getAttribute("data-cat") === f;
+      li.hidden = !mostra;
+      if (mostra) visiveis++;
+    });
+    botoes.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-filtro") === f)); });
+    vazia.hidden = visiveis > 0;
+  }
+  botoes.forEach(function (b) { b.addEventListener("click", function () { aplicarFiltro(b.getAttribute("data-filtro")); }); });
+
+  /* ---------- galeria: lightbox ---------- */
+  var dlg = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lb-img");
+  var lbLeg = document.getElementById("lb-legenda");
+  var lbCont = document.getElementById("lb-contagem");
+  var abertoPor = null;
+  var indice = 0;
+
+  function visiveis() { return itens.filter(function (li) { return !li.hidden; }); }
+  function mostrar(i) {
+    var v = visiveis();
+    if (!v.length) return;
+    indice = (i + v.length) % v.length;
+    var btn = v[indice].querySelector("button.open");
+    var img = btn.querySelector("img");
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbLeg.textContent = btn.getAttribute("data-legenda");
+    lbCont.textContent = (indice + 1) + " de " + v.length;
+  }
+  lista.addEventListener("click", function (e) {
+    var btn = e.target.closest("button.open");
+    if (!btn) return;
+    abertoPor = btn;
+    var v = visiveis();
+    var pos = v.indexOf(btn.parentNode);
+    mostrar(pos < 0 ? 0 : pos);
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    document.getElementById("lb-fechar").focus();
+  });
+  function fechar() { if (dlg.open) dlg.close(); }
+  document.getElementById("lb-fechar").addEventListener("click", fechar);
+  document.getElementById("lb-ant").addEventListener("click", function () { mostrar(indice - 1); });
+  document.getElementById("lb-prox").addEventListener("click", function () { mostrar(indice + 1); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.classList.contains("lb-inner")) fechar(); });
+  dlg.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { e.preventDefault(); mostrar(indice - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); mostrar(indice + 1); }
+  });
+  dlg.addEventListener("close", function () { lbImg.src = ""; if (abertoPor) abertoPor.focus(); });
+  var tx = null;
+  dlg.addEventListener("touchstart", function (e) { tx = e.changedTouches[0].clientX; }, { passive: true });
+  dlg.addEventListener("touchend", function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) mostrar(indice + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+
+  /* ---------- depoimentos ---------- */
+  var depWrap = document.getElementById("depoimentos-wrap");
+  var deps = document.getElementById("depoimentos");
+  // Cartões colocados à mão no HTML (ver modelo nos comentários) entram aqui.
+  Array.prototype.slice.call(document.querySelectorAll(".dep")).forEach(function (el) {
+    if (el.parentNode !== deps) deps.appendChild(el);
+  });
+  var playSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>';
+  Array.prototype.slice.call(deps.querySelectorAll(".media")).forEach(function (m) {
+    var titulo = m.getAttribute("data-titulo") || "Depoimento";
+    var yt = m.getAttribute("data-youtube");
+    var mp4 = m.getAttribute("data-mp4");
+    var poster = m.getAttribute("data-poster");
+    if (mp4) {
+      var v = document.createElement("video");
+      v.controls = true; v.preload = "none"; v.setAttribute("playsinline", "");
+      if (poster) v.poster = poster;
+      v.setAttribute("aria-label", titulo);
+      v.src = mp4;
+      m.appendChild(v);
+    } else if (yt) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "play";
+      b.setAttribute("aria-label", "Reproduzir: " + titulo);
+      b.style.backgroundImage = "url(https://i.ytimg.com/vi/" + encodeURIComponent(yt) + "/hqdefault.jpg)";
+      b.innerHTML = "<span>" + playSvg + "</span>";
+      b.addEventListener("click", function () {
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(yt) + "?autoplay=1&rel=0";
+        f.title = titulo; f.allow = "autoplay; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
+        m.replaceChild(f, b);
+      });
+      m.appendChild(b);
+    }
+  });
+  if (deps.querySelector(".dep")) depWrap.hidden = false;
+})();
+</script>
+</body>
+</html>
